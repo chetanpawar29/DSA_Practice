@@ -9,4 +9,8 @@
 |  |
 | ------- |
 | [1677-matrix-diagonal-sum](https://github.com/chetanpawar29/DSA_Practice/tree/master/1677-matrix-diagonal-sum) |
+## Math
+|  |
+| ------- |
+| [0007-reverse-integer](https://github.com/chetanpawar29/DSA_Practice/tree/master/0007-reverse-integer) |
 <!---LeetCode Topics End-->
