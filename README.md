@@ -5,6 +5,7 @@
 |  |
 | ------- |
 | [1677-matrix-diagonal-sum](https://github.com/chetanpawar29/DSA_Practice/tree/master/1677-matrix-diagonal-sum) |
+| [1878-check-if-array-is-sorted-and-rotated](https://github.com/chetanpawar29/DSA_Practice/tree/master/1878-check-if-array-is-sorted-and-rotated) |
 | [3429-special-array-i](https://github.com/chetanpawar29/DSA_Practice/tree/master/3429-special-array-i) |
 ## Matrix
 |  |
