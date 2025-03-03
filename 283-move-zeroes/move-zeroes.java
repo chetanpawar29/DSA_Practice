@@ -6,14 +6,14 @@ class Solution {
         {
             if(arr[j] != 0)
             {
+                int temp = arr[i];
                 arr[i] = arr[j];
+                arr[j] = temp;
+                
                 i++;
             }
         }
 
-        for(int j=i; j<n; j++)
-        {
-            arr[j] = 0;
-        }
+        
     }
 }
