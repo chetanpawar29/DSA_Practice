@@ -43,6 +43,8 @@ class Main {
 // } Driver Code Ends
 
 
+
+
 // User function Template for Java
 
 // a,b : the arrays
@@ -50,50 +52,17 @@ class Solution {
     // Function to return a list containing the union of the two arrays.
     public static ArrayList<Integer> findUnion(int a[], int b[]) {
         // add your code here
-        ArrayList<Integer> union = new ArrayList<>();
-        
-        int n = a.length;
-        int m = b.length;
-        
-        int i=0; int j=0;
-        
-        
-        while(i < n && j < m)
+        Set<Integer> set = new TreeSet<Integer>();
+        for(int num : a)
         {
-            if(a[i] <= b[j])
-            {
-                if(union.size()==0 || union.get(union.size()-1) != a[i])
-                {
-                    union.add(a[i]);
-                }
-                i++;
-            }else{
-                if(union.size()==0 || union.get(union.size()-1) != b[j])
-                {
-                    union.add(b[j]);
-                }
-                j++;
-            }
+            set.add(num);
         }
         
-        while(i < n)
+        for(int num : b)
         {
-            if(union.size()==0 || union.get(union.size()-1) != a[i])
-            {
-                    union.add(a[i]);
-            }
-            i++;
+            set.add(num);
         }
         
-        while(j < m)
-        {
-            if(union.size()==0 || union.get(union.size()-1) != b[j])
-            {
-                    union.add(b[j]);
-            }
-            j++;
-        }
-        
-        return union;
+       return new ArrayList<>(set);
     }
 }
