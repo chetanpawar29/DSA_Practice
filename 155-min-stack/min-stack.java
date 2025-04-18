@@ -1,42 +1,50 @@
 class MinStack {
 
-    Stack<Pair> stack;
+    Stack<Long> stack;
+    Long min;
 
     public MinStack() {
         stack = new Stack<>();
     }
     
-    public void push(int val) {
+    public void push(int value) {
+        Long val = Long.valueOf(value);
         if(stack.empty()){
-            stack.push(new Pair(val,val));
+            min = val;
+            stack.push(val);
         }else{
-            stack.push(new Pair(val,Math.min(val,stack.peek().y)));
+            if(val > min){
+                stack.push(val);
+            }else{
+                stack.push(2*val - min);
+                min = val;
+            }
         }
     }
     
     public void pop() {
+        Long x = stack.peek();
         stack.pop();
+        if(x < min){
+            min = 2*min - x;
+        }
     }
     
     public int top() {
-        return stack.peek().x;
+        Long x = stack.peek();
+
+        if(x < min){
+            return min.intValue();
+        }else{
+            return x.intValue();
+        }
     }
     
     public int getMin() {
-        return stack.peek().y;
+        return min.intValue();
     }
 }
 
-class Pair{
-    int x;
-    int y;
-
-    Pair(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-}
 
 /**
  * Your MinStack object will be instantiated and called as such:
