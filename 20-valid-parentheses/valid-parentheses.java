@@ -2,7 +2,7 @@ class Solution {
     public boolean isValid(String s) {
 
         char str[] = s.toCharArray();
-        char opening;
+        char open;
 
         Stack<Character> stack = new Stack<>();
 
@@ -15,35 +15,15 @@ class Solution {
                 if(stack.empty()){
                     return false;
                 }
-                if(ch == ')'){
-                opening = '(';
 
-                if(opening != stack.peek())
-                {
+                open = stack.peek(); 
+                if(ch==')' && open != '('||ch==']' && open != '['||ch=='}' && open != '{') {
                     return false;
                 }else{
-                     stack.pop();
+                    stack.pop();
                 }
-            }else if(ch == ']'){
-                opening = '[';
-
-                if(opening != stack.peek())
-                {
-                    return false;
-                }else{
-                     stack.pop();
-                }
-            }else if(ch == '}'){
-                opening = '{';
-
-                if(opening != stack.peek())
-                {
-                    return false;
-                }else{
-                     stack.pop();
-                }
-            } 
-        }
+                
+            }
         }
 
 
