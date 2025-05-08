@@ -12,7 +12,7 @@ class Geeks {
             for (int i = 0; i < str.length; i++) {
                 arr[i] = Integer.parseInt(str[i]);
             }
-            System.out.println(new Solution().missingNumber(arr));
+            System.out.println(new Solution().missingNum(arr));
             System.out.println("~");
         }
     }
@@ -20,21 +20,17 @@ class Geeks {
 // } Driver Code Ends
 
 
-
-
-// User function Template for Java
 class Solution {
-    int missingNumber(int arr[]) {
+    int missingNum(int nums[]) {
         // code here
-        Arrays.sort(arr);
-        for(int i=0; i<arr.length; i++)
-        {
-            if(i+1 != arr[i])
-            {
+        Arrays.sort(nums);
+
+        
+        for(int i=0; i<nums.length; i++){
+            if(i+1 != nums[i]){
                 return i+1;
             }
         }
-        
-        return arr.length+1;
+        return nums.length+1; 
     }
 }
