@@ -4,10 +4,8 @@ class Solution {
         int temp[][] = new int[n][n];
 
         for(int i=0; i<n; i++){
-            int index = 0;
             for(int j=0; j<n; j++){
-                temp[index][n-1-i] = matrix[i][j];
-                index++;
+                temp[j][n-1-i] = matrix[i][j];
             }
         }
 
