@@ -10,7 +10,7 @@ class Solution {
         
         for(int i=0; i<n; i++){
             if(hashArr[s.charAt(i) - 'a'] == 1){
-                return (char) (97 + s.charAt(i) - 'a');
+                return (char) ('a' + (s.charAt(i) - 'a'));
             }
             
             
