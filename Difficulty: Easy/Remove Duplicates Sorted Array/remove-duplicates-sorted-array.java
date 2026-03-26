@@ -1,22 +1,10 @@
 class Solution {
-    // Function to remove duplicates from the given array
-    public int removeDuplicates(int[] arr) {
-        // Code Here
-        int n = arr.length;
-        
-        int i=0; 
-        int j=1;
-        
-        while(j<n){
-            if(arr[i] != arr[j]){
-                i++;
-                arr[i] = arr[j];
-                j++;
-            }else{
-                j++;
-                
-            }
+    ArrayList<Integer> removeDuplicates(int[] arr) {
+        // code here
+        Set<Integer> set = new LinkedHashSet<>();
+        for (int num : arr) {
+            set.add(num);
         }
-        return i+1;
+        return new ArrayList<>(set);
     }
 }
