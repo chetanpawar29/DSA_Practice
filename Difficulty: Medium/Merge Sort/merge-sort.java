@@ -1,47 +1,43 @@
 class Solution {
-
-    void mergeSort(int arr[], int l, int r) {
+    public void mergeSort(int arr[], int l, int r) {
         // code here
-        if(l >= r){
-            return;
-        }
+        int n = arr.length;
         
+        if(l>=r ) return ;
         int mid = (l+r)/2;
         
         mergeSort(arr, l, mid);
         mergeSort(arr, mid+1, r);
-        
-        merge(arr, l, mid, r);
+        merge(arr, n, l, mid, r);
     }
     
-    void merge(int arr[], int low, int mid, int high){
+    public void merge(int arr[], int n, int l, int mid, int r){
         List<Integer> list = new ArrayList<>();
-        int left = low;
-        int right = mid+1;
+        int i= l;
+        int j = mid+1;
         
-        while(left <= mid && right <= high){
-            if(arr[left] <= arr[right]){
-                list.add(arr[left]);
-                left++;
+        while(i<=mid && j<=r){
+            if(arr[i] <= arr[j]){
+                list.add(arr[i]);
+                i++;
             }else{
-                list.add(arr[right]);
-                right++;
+                list.add(arr[j]);
+                j++;
             }
         }
         
-        while(left <= mid){
-            list.add(arr[left]);
-            left++;
+        while(i<=mid){
+            list.add(arr[i]);
+            i++;
         }
         
-        while(right <= high){
-            list.add(arr[right]);
-            right++;
+        while(j<=r){
+            list.add(arr[j]);
+            j++;
         }
         
-        for(int i=low; i<=high; i++){
-            arr[i] = list.get(i-low);
+        for(int k=l; k<=r; k++){
+            arr[k] = list.get(k-l);
         }
     }
-
 }
