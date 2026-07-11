@@ -1,21 +1,18 @@
 class Solution {
-    static boolean isPerfect(int n) {
+    static boolean isPerfect(int num) {
         // code here
         int sum = 1;
-        for(int i=2; i*i<=n; i++){
-            if(n%i == 0){
-                sum += i;
-            
-                if(i != n/i){
-                    sum+=n/i;
+        for(int i=2; i*i<=num; i++){
+            if(num % i == 0){
+                sum+=i;
+
+                if(i != num/i){
+                    sum+=num/i;
                 }
             }
         }
-        
-        if(n == sum){
-            return true;
-        }
-        
-        return false;
+
+        return (sum == num)? true : false;
+    
     }
 }
