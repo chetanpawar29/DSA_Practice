@@ -1,23 +1,15 @@
 class Solution {
     static boolean isPrime(int n) {
         // code here
-        int count = 0;
+        if(n == 1) return false;
+        boolean isPrime = true;
         
-        for(int i=1; i*i<=n; i++){
-            if(n%i==0){
-                count++;
-                
-                if(i != n/i){
-                    count++;
-                }
+        for(int i=2; i<n; i++){
+            if(n%i == 0){
+                isPrime = false;
             }
-            
         }
         
-        if(count == 2){
-            return true;
-        }
-        
-        return false;
+        return isPrime;
     }
 }
