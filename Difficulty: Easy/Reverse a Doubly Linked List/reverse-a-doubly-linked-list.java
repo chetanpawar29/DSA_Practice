@@ -14,19 +14,15 @@ class Node {
 class Solution {
     public Node reverse(Node head) {
         // code here
-        Stack<Integer> st = new Stack<>();
         Node temp = head;
+        Node pre = null;
         while(temp!=null){
-            st.push(temp.data);
-            temp = temp.next;
+            pre = temp.prev;
+            temp.prev = temp.next;
+            temp.next = pre;
+            temp = temp.prev;
         }
         
-        temp = head;
-        while(temp!=null){
-            temp.data = st.pop();
-            temp = temp.next;
-        }
-        
-        return head;
+        return pre.prev;
     }
 }
