@@ -1,4 +1,4 @@
-/*
+/* Structure of Doubly Linked List Node
 class Node {
     int data;
     Node next;
@@ -14,21 +14,19 @@ class Node {
 class Solution {
     public Node reverse(Node head) {
         // code here
-        Node current = head;
-        Node back = null;
-        Node newHead = null;
-        
-        while(current != null){
-            back = current.prev;
-            current.prev = current.next;
-            current.next = back;
-            
-            if(current.prev == null){
-                newHead = current;
-            }
-            
-            current = current.prev;
+        Stack<Integer> st = new Stack<>();
+        Node temp = head;
+        while(temp!=null){
+            st.push(temp.data);
+            temp = temp.next;
         }
-        return newHead;
+        
+        temp = head;
+        while(temp!=null){
+            temp.data = st.pop();
+            temp = temp.next;
+        }
+        
+        return head;
     }
 }
